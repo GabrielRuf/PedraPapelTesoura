@@ -54,7 +54,7 @@
     <ImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/L"
+        android:src="@drawable/largarto"
         android:id="@+id/lagartoBt"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
