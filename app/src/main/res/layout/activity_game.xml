@@ -5,8 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 <ImageButton
-    android:layout_width="100dp"
-    android:layout_height="100dp"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
     android:src="@drawable/papel"
     android:id="@+id/papelBt"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -17,8 +17,8 @@
 
     />
     <ImageButton
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/tesoura"
         android:id="@+id/tesouraBt"
         android:scaleType="centerInside"
@@ -28,15 +28,40 @@
         app:layout_constraintTop_toTopOf="parent"
         />
     <ImageButton
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:src="@drawable/pedra"
         android:id="@+id/pedraBt"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tesouraBt"
+        app:layout_constraintEnd_toEndOf="@+id/spockBt"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/s"
+        android:id="@+id/spockBt"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pedraBt"
+        app:layout_constraintEnd_toStartOf="@+id/lagartoBt"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/L"
+        android:id="@+id/lagartoBt"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spockBt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,6 +33,13 @@ class GameActivity : AppCompatActivity(){
             onClickedButton(Choices.TESOURA)
         }
 
+        agb.spockBt.setOnClickListener{
+            onClickedButton(Choices.SPOCK)
+        }
+
+        agb.lagartoBt.setOnClickListener{
+            onClickedButton(Choices.LARGARTO)
+        }
     }
 
     private fun onClickedButton(choice: Choices){
@@ -42,17 +49,26 @@ class GameActivity : AppCompatActivity(){
                 winner = "EMPATE"
             }else{
             val result = when(choice){
-                Choices.PEDRA -> if (botchoice.equals(Choices.PAPEL)){
+                Choices.PEDRA -> if (botchoice.equals(Choices.PAPEL) or botchoice.equals(Choices.SPOCK)){
                     winner = "BOT 1"
                 }else
                     winner = "PLAYER"
 
-                Choices.PAPEL -> if (botchoice.equals(Choices.TESOURA)){
+                Choices.PAPEL -> if (botchoice.equals(Choices.TESOURA) or botchoice.equals(Choices.LARGARTO)){
                     winner = "BOT 1"
                 }else
                     winner = "PLAYER"
 
-                Choices.TESOURA -> if (botchoice.equals(Choices.PEDRA)){
+                Choices.TESOURA -> if (botchoice.equals(Choices.PEDRA) or botchoice.equals(Choices.SPOCK)){
+                    winner = "BOT 1"
+                }else
+                    winner = "PLAYER"
+
+                Choices.SPOCK -> if (botchoice.equals(Choices.PAPEL) or botchoice.equals(Choices.LARGARTO)){
+                    winner = "BOT 1"
+                }else
+                    winner = "PLAYER"
+                Choices.LARGARTO -> if (botchoice.equals(Choices.TESOURA) or botchoice.equals(Choices.PEDRA)){
                     winner = "BOT 1"
                 }else
                     winner = "PLAYER"
@@ -67,17 +83,26 @@ class GameActivity : AppCompatActivity(){
             }else{
                 if (bot1choice.equals(bot2choice)){
                     val result = when(choice){
-                        Choices.PEDRA -> if (bot1choice.equals(Choices.PAPEL)){
+                        Choices.PEDRA -> if (bot1choice.equals(Choices.PAPEL) or bot1choice.equals(Choices.SPOCK)){
                             winner = "EMPATE"
                         }else
                             winner = "PLAYER"
 
-                        Choices.PAPEL -> if (bot1choice.equals(Choices.TESOURA)){
+                        Choices.PAPEL -> if (bot1choice.equals(Choices.TESOURA) or bot1choice.equals(Choices.LARGARTO)){
                             winner = "EMPATE"
                         }else
                             winner = "PLAYER"
 
-                        Choices.TESOURA -> if (bot1choice.equals(Choices.PEDRA)){
+                        Choices.TESOURA -> if (bot1choice.equals(Choices.PEDRA) or bot1choice.equals(Choices.SPOCK)){
+                            winner = "EMPATE"
+                        }else
+                            winner = "PLAYER"
+
+                        Choices.SPOCK -> if (bot1choice.equals(Choices.PAPEL) or bot1choice.equals(Choices.LARGARTO)){
+                            winner = "EMPATE"
+                        }else
+                            winner = "PLAYER"
+                        Choices.LARGARTO -> if (bot1choice.equals(Choices.TESOURA) or bot1choice.equals(Choices.PEDRA)){
                             winner = "EMPATE"
                         }else
                             winner = "PLAYER"
@@ -85,38 +110,56 @@ class GameActivity : AppCompatActivity(){
                 }else{
                     if (choice.equals(bot2choice)){
                         val result = when(bot1choice){
-                            Choices.PEDRA -> if (choice.equals(Choices.PAPEL)){
+                            Choices.PEDRA -> if (choice.equals(Choices.PAPEL) or choice.equals(Choices.SPOCK)){
                                 winner = "EMPATE"
                             }else
                                 winner = "BOT 1"
 
-                            Choices.PAPEL -> if (choice.equals(Choices.TESOURA)){
+                            Choices.PAPEL -> if (choice.equals(Choices.TESOURA) or choice.equals(Choices.LARGARTO)){
                                 winner = "EMPATE"
                             }else
                                 winner = "BOT 1"
 
-                            Choices.TESOURA -> if (choice.equals(Choices.PEDRA)){
+                            Choices.TESOURA -> if (choice.equals(Choices.PEDRA) or choice.equals(Choices.SPOCK)){
                                 winner = "EMPATE"
                             }else
                                 winner = "BOT 1"
+
+                            Choices.SPOCK -> if (choice.equals(Choices.PAPEL) or choice.equals(Choices.LARGARTO)){
+                                winner = "EMPATE"
+                            }else
+                                winner = "PLAYER"
+                            Choices.LARGARTO -> if (choice.equals(Choices.TESOURA) or choice.equals(Choices.PEDRA)){
+                                winner = "EMPATE"
+                            }else
+                                winner = "PLAYER"
                         }
                     }else{
                         if (choice.equals(bot1choice)){
                             val result = when(bot2choice){
-                                Choices.PEDRA -> if (choice.equals(Choices.PAPEL)){
+                                Choices.PEDRA -> if (choice.equals(Choices.PAPEL) or choice.equals(Choices.SPOCK)){
                                     winner = "EMPATE"
                                 }else
                                     winner = "BOT 2"
 
-                                Choices.PAPEL -> if (choice.equals(Choices.TESOURA)){
+                                Choices.PAPEL -> if (choice.equals(Choices.TESOURA) or choice.equals(Choices.LARGARTO)){
                                     winner = "EMPATE"
                                 }else
                                     winner = "BOT 2"
 
-                                Choices.TESOURA -> if (choice.equals(Choices.PEDRA)){
+                                Choices.TESOURA -> if (choice.equals(Choices.PEDRA) or choice.equals(Choices.SPOCK)){
                                     winner = "EMPATE"
                                 }else
                                     winner = "BOT 2"
+
+                                Choices.SPOCK -> if (choice.equals(Choices.PAPEL) or choice.equals(Choices.LARGARTO)){
+                                    winner = "EMPATE"
+                                }else
+                                    winner = "PLAYER"
+                                Choices.LARGARTO -> if (choice.equals(Choices.TESOURA) or choice.equals(Choices.PEDRA)){
+                                    winner = "EMPATE"
+                                }else
+                                    winner = "PLAYER"
                             }
                         }else{
                             winner = "EMPATE"
